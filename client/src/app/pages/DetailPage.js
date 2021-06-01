@@ -9,6 +9,15 @@ const DetailPage = () => {
   const [ detail, setDetail ] = useState();
   const { getDetailById } = useFirestore();
 
+  const data = {
+     afbeeldingUrl: "foto",
+     description: "synopsis",
+     rating: 5,
+     cast: ["a","b","c"],
+     tags: ["a","b","c"],
+     wishlist: true
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getDetailById(id);
@@ -20,8 +29,7 @@ const DetailPage = () => {
 
   return (
     <BaseLayout>
-      {!!detail && <DetailDetails detail={detail} /> }
-      {!!detail && <DetailReviewList detailId={detail.uid} /> }
+  
       <img>
         Hier komt een foto van de film/serie
       </img>
