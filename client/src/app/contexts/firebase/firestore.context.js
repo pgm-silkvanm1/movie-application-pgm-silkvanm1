@@ -49,7 +49,7 @@ const FirestoreProvider = ({children}) => {
     return {projects, itemsPerPage, lastVisibleDoc};
   };
 
-  const getProjectById = async (projectId) => {
+  const getDetailById = async (projectId) => {
     const docRef = db.collection('projects').doc(projectId);
     const doc = await docRef.get();
     if (!doc.exists) {
@@ -101,7 +101,7 @@ const FirestoreProvider = ({children}) => {
   }
 
   return (
-    <FirestoreContext.Provider value={{addReview, getPagedProjects, getProjectById, getProjects, getProjectReviews}}>
+    <FirestoreContext.Provider value={{addReview, getPagedProjects, getDetailById, getProjects, getProjectReviews}}>
       {children}
     </FirestoreContext.Provider>
   );

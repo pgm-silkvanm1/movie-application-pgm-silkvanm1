@@ -1,7 +1,7 @@
-import { ProjectList } from '../components/project';
+import { ProjectList } from '../components/detail';
 import { BaseLayout } from '../layouts';
 
-const ProjectsPage = () => {
+const FilmsPage = () => {
   return (
     <BaseLayout>
       <ProjectList />
@@ -9,4 +9,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default FilmsPage;
