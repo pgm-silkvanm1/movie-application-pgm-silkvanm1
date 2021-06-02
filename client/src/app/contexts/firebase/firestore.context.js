@@ -28,11 +28,13 @@ const FirestoreProvider = ({children}) => {
     const MovieList = [
       {
         title: "title",
-        description:"ik ben een beschrijving"
+        description:"ik ben een beschrijving",
+        id: "1"
       }, 
       {
         title: "title2",
-        description:"ik ben een beschrijving,ik ben een beschrijvingik ben een beschrijving"
+        description:"ik ben een beschrijving,ik ben een beschrijvingik ben een beschrijving",
+        id: "2"
       }]
   }
 

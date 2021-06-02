@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { stringify } from "uuid";
 import { DetailDetails, DetailReviewList } from "../components/detail";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
@@ -10,12 +11,20 @@ const DetailPage = () => {
   const { getDetailById } = useFirestore();
 
   const data = {
-     afbeeldingUrl: "foto",
-     description: "synopsis",
-     rating: 5,
-     cast: ["a","b","c"],
-     tags: ["a","b","c"],
-     wishlist: true
+    title: "filmtitel",
+    afbeeldingUrl: "foto",
+    description: "synopsis",
+    rating: 5,
+    views: 142,
+    cast: ["a","b","c"],
+    tags: ["a","b","c"],
+    wishlist: true,
+    comments: [{
+      user: "naam",
+      content: "Hier komt een comment",
+      date: Date()
+    }],
+    date: Date()
   }
 
   useEffect(() => {
@@ -29,31 +38,21 @@ const DetailPage = () => {
 
   return (
     <BaseLayout>
-  
-      <img>
-        Hier komt een foto van de film/serie
-      </img>
-      <h2>Movie title</h2>
-      <p>tags, tags, tags</p>
-      <img>Ratings</img>
-      <p>Director: </p>
-      <p>Writer:</p>
- 
-      <p>
-        Hier komt de synopsis van de film/serie
-      </p>
 
+    {!!detail && 
+    <div>
+        <img src="detail.afbeeldingUrl"/>
+        <h2>detail.title</h2>
+        <p>detail.tags</p>
+        <img>detail.rating</img>
+      <p>
+        detail.description
+      </p>
       <div>
-        <div>
-          <img>Castafbeeldingen</img>
-        </div>
-        <div>
-          <img>Reviews</img>
-        </div>
-        <div>
-          <video>Trailer</video>
-        </div>
+        <img>detail.cast</img>
       </div>
+    </div>}
+      
 
     </BaseLayout>
   );
