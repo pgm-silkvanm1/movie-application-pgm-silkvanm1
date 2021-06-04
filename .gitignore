@@ -129,3 +129,6 @@ yarn-error.log*
 # Firebase stuff
 .env
 key.json
+
+.lhignore
+.lh
