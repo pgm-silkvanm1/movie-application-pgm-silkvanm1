@@ -24,6 +24,20 @@ const FirestoreProvider = ({children}) => {
     return projects;
   };
 
+  const getMovieList = async (filter) => {
+    const MovieList = [
+      {
+        title: "title",
+        description:"ik ben een beschrijving",
+        id: "1"
+      }, 
+      {
+        title: "title2",
+        description:"ik ben een beschrijving,ik ben een beschrijvingik ben een beschrijving",
+        id: "2"
+      }]
+  }
+
   const getPagedProjects = async (itemsPerPage = 10, lastVisible = null) => {
     let query = null;
 
