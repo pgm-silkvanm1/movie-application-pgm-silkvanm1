@@ -44,12 +44,12 @@ const DetailPage = () => {
         <img src="detail.afbeeldingUrl"/>
         <h2>detail.title</h2>
         <p>detail.tags</p>
-        <img>detail.rating</img>
+        {/* <img>detail.rating</img> */}
       <p>
         detail.description
       </p>
       <div>
-        <img>detail.cast</img>
+        {/* <img>detail.cast</img> */}
       </div>
     </div>}
       

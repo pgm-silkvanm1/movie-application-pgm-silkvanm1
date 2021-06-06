@@ -132,3 +132,6 @@ key.json
 
 .lhignore
 .lh
+
+
+client/build/

@@ -10,7 +10,7 @@ const MovieListItem = ({ movie }) => {
   return (
     <article class={styles.movielistItem}>
         <h3 className={styles.title}><Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>{ movie.title }</Link></h3>
-        <span className={styles.numViews}><FiFilm /><span>{ project.numViews }</span></span>
+        <span className={styles.numViews}><FiFilm /><span>{ movie.numViews }</span></span>
     </article>
   )
 };

@@ -1,9 +1,9 @@
 import ProjectDetails from './ProjectDetails';
-import ProjectList from './ProjectList';
+import MovieList from './MovieList';
 import ProjectReviewList from './ProjectReviewList';
 
 export {
   ProjectDetails,
-  ProjectList,
+  MovieList,
   ProjectReviewList,
 }
