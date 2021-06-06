@@ -7,6 +7,17 @@ import faker from 'faker'
 
 const GDMGENT_API_CASES = 'https://www.gdm.gent/static/data/cases.json'
 
+
+const KEY="ebb8a15262c3cd22c99cc04c030ddfbf"
+
+
+async fetchMovies( {
+	const response = await fetch (`https://api.themoviedb.org/3/movie/${this.id}?api_key=${KEY}`);
+	const data = await response.json();
+
+})
+
+
 ;(async () => {
 	let collectionRef = db.collection('movies')
 
@@ -21,7 +32,7 @@ const GDMGENT_API_CASES = 'https://www.gdm.gent/static/data/cases.json'
 			comments: {
 				user: faker.name.findName(),
 				comment: faker.lorem.sentence(),
-				date: faker.datatype.datetime(,)
+				date: faker.datatype.datetime(),
 			},
 			cast: new Array(20).fill(null).map((e) => faker.name.findName()),
 			tags: new Array(20).fill(null).map((e) => faker.lorem.word()),
