@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import * as Routes from './routes'
 
 import styles from './App.module.scss'
-import { HomePage, SignInPage } from './pages'
+import { DetailPage, FilmsPage, HomePage, SignInPage } from './pages'
 
 const themes = {
 	dark: '',
@@ -36,8 +36,16 @@ function App() {
 										from={Routes.HOME}
 										to={Routes.LANDING}
 									/>
-									{/* <Route exact path={Routes.PROJECT_DETAILS} component={ ProjectPage }/> */}
-									{/* <Route exact path={Routes.PROJECTS} component={ ProjectsPage }/> */}
+									<Route
+										exact
+										path={Routes.MOVIE_DETAILS}
+										component={DetailPage}
+									/>
+									<Route
+										exact
+										path={Routes.MOVIES}
+										component={FilmsPage}
+									/>
 									<Route
 										exact
 										path={Routes.AUTH_SIGN_IN}

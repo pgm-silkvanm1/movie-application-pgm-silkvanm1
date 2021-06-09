@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import MovieListItem from './MovieListItem'
-import { useFirestore } from '../../contexts/firebase/firestore.context'
+import { getMovieList, getMovieListFromApi } from '../api/API'
 
 const MovieList = ({ filter }) => {
 	const [movies, setMovies] = useState()
-	const { getMovieList } = useFirestore()
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const data = await getMovieList(filter)
-			setMovies(data)
+			const res = await getMovieListFromApi('popular')
+			console.log(res.data)
+			setMovies(res.data)
 		}
 
 		fetchData()
@@ -18,7 +18,7 @@ const MovieList = ({ filter }) => {
 	return (
 		<div className="movie-list">
 			{!!movies &&
-				movies.map((movie) => {
+				movies.results.map((movie) => {
 					return <MovieListItem key={movie.id} movie={movie} />
 				})}
 		</div>
