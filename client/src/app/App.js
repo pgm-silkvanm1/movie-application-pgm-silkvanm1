@@ -25,7 +25,7 @@ function App() {
 				<AuthProvider>
 					<FirestoreProvider>
 						<ThemeContext.Provider value={themes.dark}>
-							<Router basename={'react-firebase-boilerplate'}>
+							<Router basename={''}>
 								<Switch>
 									<Route
 										exact

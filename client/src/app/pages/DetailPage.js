@@ -4,37 +4,21 @@ import { stringify } from "uuid";
 import { DetailDetails, DetailReviewList } from "../components/detail";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
+import { getDetailById, getMoviesFromId } from '../components/api/API'
 
 const DetailPage = () => {
   const { id } = useParams();
   const [ detail, setDetail ] = useState();
-  const { getDetailById } = useFirestore();
-
-  const data = {
-    title: "filmtitel",
-    afbeeldingUrl: "foto",
-    description: "synopsis",
-    rating: 5,
-    views: 142,
-    cast: ["a","b","c"],
-    tags: ["a","b","c"],
-    wishlist: true,
-    comments: [{
-      user: "naam",
-      content: "Hier komt een comment",
-      date: Date()
-    }],
-    date: Date()
-  }
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getDetailById(id);
+      const data = await getMoviesFromId(id);
+      console.log(data);
       setDetail(data);
     };
 
     fetchData();    
-  }, [id, getDetailById])
+  }, [id, getMoviesFromId])
 
   return (
     <BaseLayout>
