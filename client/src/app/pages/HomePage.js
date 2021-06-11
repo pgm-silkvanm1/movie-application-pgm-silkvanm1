@@ -2,6 +2,7 @@ import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard'
 import { getMovieListFromApi } from '../components/api/API'
 import React, {useState} from "react";
+import styles from '../components/layout/MovieCard.module.scss';
 
 const HomePage = () => {
 
@@ -15,14 +16,16 @@ const HomePage = () => {
                   
           
           try {
-              const res = await getMovieListFromApi();
-              const data  = await res.json();
-              setMovies(data.results);
-              console.log('klik')
+              const res = await getMovieListFromApi(query);
+              const data  = await res;
+              setMovies(data.data.results);
+              console.log(data)
           }catch(err){
               console.error(err);
           }
       }
+
+
       
   return (
     <BaseLayout>
@@ -35,8 +38,8 @@ const HomePage = () => {
         />
         <button className="button" type="submit">Search</button>
       </form>
-      <div className="card-list">
-          {movies.filter(movie => movie.poster_path).map(movie => (
+      <div className={styles.cardlist}>
+          {movies && movies.map(movie => (
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>    

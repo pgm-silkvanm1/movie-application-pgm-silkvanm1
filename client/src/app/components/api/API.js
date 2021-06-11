@@ -4,8 +4,8 @@ import axios from 'axios'
 const baseUrl = 'https://api.themoviedb.org/3/'
 const apiKey = process.env.REACT_APP_TMDB_API_KEY
 
-const getMovieListFromApi = async () => {
-    const res = axios.get(baseUrl + 'movie', { params: { api_key: apiKey } })
+const getMovieListFromApi = async (query) => {
+    const res = axios.get(baseUrl + 'search/movie' , { params: { api_key: apiKey, query: query } })
 	return res
 }
 
@@ -24,4 +24,9 @@ const getMoviesFromKeyword = async (id) => {
 	return res
 }
 
-export { getMovieListFromApi, getMoviesFromId, getGenreFromApi, getMoviesFromKeyword }
+const getMoviesFromTrending = async () => {
+    const res = axios.get(baseUrl + 'all/', + '23' , { params: { api_key: apiKey } })
+    return res
+}
+
+export { getMovieListFromApi, getMoviesFromId, getGenreFromApi, getMoviesFromKeyword, getMoviesFromTrending }
