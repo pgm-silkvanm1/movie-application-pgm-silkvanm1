@@ -6,8 +6,6 @@ import { firebaseConfig } from '../../config';
 const FirebaseContext = createContext(null);
 const useFirebase = () => useContext(FirebaseContext);
 
-console.log(firebaseConfig)
-
 const FirebaseProvider = ({children}) => {
   const [app] = useState(!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app());
 

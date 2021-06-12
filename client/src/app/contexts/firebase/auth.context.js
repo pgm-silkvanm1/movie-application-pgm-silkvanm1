@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import 'firebase/auth'
-
 import { useFirebase } from './firebase.context'
 
 const AuthContext = createContext(null)
@@ -37,7 +36,7 @@ const AuthProvider = ({ children }) => {
 
 	const createUserWithEmailAndPassword = async (email, password) => {
 		try {
-			return await auth.signInWithEmailAndPassword(email, password)
+			return await auth.createUserWithEmailAndPassword(email, password)
 		} catch (error) {
 			console.log(error)
 		}
@@ -49,7 +48,12 @@ const AuthProvider = ({ children }) => {
 
 	return (
 		<AuthContext.Provider
-			value={{ currentUser, signInWithEmailAndPassword, signOut }}
+			value={{
+				currentUser,
+				signInWithEmailAndPassword,
+				signOut,
+				createUserWithEmailAndPassword,
+			}}
 		>
 			{children}
 		</AuthContext.Provider>

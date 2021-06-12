@@ -7,7 +7,7 @@ import { useAuth } from '../contexts/firebase/auth.context'
 const AccountPage = () => {
 	const { id } = useParams()
 	const [user, setUser] = useState()
-	const { currentUser, signOut } = useAuth()
+	const { currentUser } = useAuth()
 
 	useEffect(() => {
 		setUser(currentUser)
@@ -25,6 +25,3 @@ const AccountPage = () => {
 }
 
 export default AccountPage
-
-//user.internet.displayName (avatar)
-//user.name.firstName

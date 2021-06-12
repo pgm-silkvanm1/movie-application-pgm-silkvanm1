@@ -3,18 +3,23 @@ import { useHistory } from 'react-router-dom'
 
 import { useAuth } from '../contexts/firebase/auth.context'
 
-const SignInPage = ({ children }) => {
+const Register = ({ children }) => {
 	const history = useHistory()
 	const [signInForm, setSignInForm] = useState({
 		txtEmail: '',
 		txtPassword: '',
 	})
-	const { currentUser, signInWithEmailAndPassword, signOut } = useAuth()
+	const {
+		currentUser,
+		signInWithEmailAndPassword,
+		signOut,
+		createUserWithEmailAndPassword,
+	} = useAuth()
 
 	const handleSubmit = async (ev) => {
 		ev.preventDefault()
 
-		const result = await signInWithEmailAndPassword(
+		const result = await createUserWithEmailAndPassword(
 			signInForm.txtEmail,
 			signInForm.txtPassword
 		)
@@ -100,4 +105,4 @@ const SignInPage = ({ children }) => {
 	)
 }
 
-export default SignInPage
+export default Register
