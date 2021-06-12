@@ -9,7 +9,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import * as Routes from './routes'
 
 import styles from './App.module.scss'
-import { DetailPage, FilmsPage, HomePage, SignInPage, Register } from './pages'
+import {
+	DetailPage,
+	FilmsPage,
+	HomePage,
+	SignInPage,
+	Register,
+	AccountPage,
+} from './pages'
 
 const themes = {
 	dark: '',
@@ -55,6 +62,11 @@ function App() {
 										exact
 										path={Routes.AUTH_REGISTER}
 										component={Register}
+									/>
+									<Route
+										exact
+										path={Routes.ACCOUNT}
+										component={AccountPage}
 									/>
 								</Switch>
 							</Router>

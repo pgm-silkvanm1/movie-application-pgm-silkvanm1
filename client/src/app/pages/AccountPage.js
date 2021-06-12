@@ -11,6 +11,7 @@ const AccountPage = () => {
 
 	useEffect(() => {
 		setUser(currentUser)
+
 	})
 
 	return (
