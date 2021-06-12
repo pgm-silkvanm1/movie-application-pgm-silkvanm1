@@ -7,10 +7,17 @@ import { useAuth } from '../contexts/firebase/auth.context'
 const AccountPage = () => {
 	const { id } = useParams()
 	const [user, setUser] = useState()
-	const { currentUser, signOut } = useAuth()
+	const { currentUser, createUserWithEmailAndPassword, signOut } = useAuth()
 
 	useEffect(() => {
 		setUser(currentUser)
+
+		const fetchTest = async () => {
+			const res = await createUserWithEmailAndPassword('test@test.com', 'test123')
+			console.log(res);
+		}
+		fetchTest()
+
 	})
 
 	return (

@@ -6,7 +6,7 @@ import serviceAccount from './key.json';
 
 const app = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://react-pgmgent.firebaseio.com"
+  databaseURL: "firebase-adminsdk-dtkle@movie-application-5eb48.iam.gserviceaccount.com"
 });
 
 // Reference Authentication
