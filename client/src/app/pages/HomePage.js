@@ -1,35 +1,35 @@
 import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard'
-import { getMovieListFromApi } from '../components/api/API'
+import { getMovieListFromApi, getMoviesFromPopular } from '../components/api/API'
 import React, {useState} from "react";
 import styles from '../components/layout/MovieCard.module.scss';
 
 const HomePage = () => {
 
-      //states- input query, movies
-      const [query, setQuery] = useState('');
-      //create the state for movies, and update that state appropriate
-      const [movies, setMovies] = useState([]);
+  //states- input query, movies
+  const [query, setQuery] = useState('');
+  //create the state for movies, and update that state appropriate
+  const [movies, setMovies] = useState([]);
       
-      const searchMovies = async (e) => {
-          e.preventDefault();
+  const searchMovies = async (e) => {
+    e.preventDefault();
                   
           
-          try {
-              const res = await getMovieListFromApi(query);
-              const data  = await res;
-              setMovies(data.data.results);
-              console.log(data)
-          }catch(err){
-              console.error(err);
-          }
-      }
+    try {
+      const res = await getMovieListFromApi(query);
+      const data  = await res;
+      setMovies(data.data.results);
+      // console.log(data)
+    }catch(err){
+      console.error(err);
+    }
+  }
+
 
 
       
   return (
     <BaseLayout>
-
       <form className="form" onSubmit={searchMovies}>
         <label className="label" htmlFor="query"></label>
         <input className="input" type="text" name="query"
@@ -43,36 +43,6 @@ const HomePage = () => {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>    
-
-
-      <p>HOME PAGE</p>
-      <div>
-        {/* <img>Hier komt een carroussel van films/series</img> */}
-      </div>
-
-      <h2>
-        Trending
-      </h2>
-      <div>
-        {/* <img>Verschillende films/series</img> */}
-      </div>
-
-      <h2>Popular</h2>
-      <div>
-        <div>
-          <img/>
-          <h3>Movie title</h3>
-          {/* <img>Ratings</img> */}
-          <p>synopsis </p>
-        </div>
-      </div>
-
-      <h2>
-        Latest trailers
-      </h2>
-      <div>
-        {/* <video>Verschillende films/series hun trailers</video> */}
-      </div>
     </BaseLayout>
   );
 };

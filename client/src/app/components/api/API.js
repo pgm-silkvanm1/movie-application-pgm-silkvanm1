@@ -29,4 +29,9 @@ const getMoviesFromTrending = async () => {
     return res
 }
 
-export { getMovieListFromApi, getMoviesFromId, getGenreFromApi, getMoviesFromKeyword, getMoviesFromTrending }
+const getMoviesFromPopular = async () => {
+    const res = axios.get(baseUrl + 'movie/popular' , { params: { api_key: apiKey } })
+    return res
+}
+
+export { getMovieListFromApi, getMoviesFromId, getGenreFromApi, getMoviesFromKeyword, getMoviesFromTrending, getMoviesFromPopular }

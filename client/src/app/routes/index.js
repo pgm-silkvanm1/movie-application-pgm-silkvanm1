@@ -1,6 +1,5 @@
 export const LANDING = '/'
 export const HOME = '/home'
-export const PROJECTS = '/projects'
 export const MOVIES = '/movies'
 export const PROJECT_DETAILS = '/projects/:id'
 export const MOVIE_DETAILS = '/movies/:id'

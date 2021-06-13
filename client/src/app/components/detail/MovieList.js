@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import MovieListItem from './MovieListItem'
-import { getMovieList, getMovieListFromApi } from '../api/API'
+import { getMovieList, getMovieListFromApi, getMoviesFromPopular } from '../api/API'
 
 const MovieList = ({ filter }) => {
 	const [movies, setMovies] = useState()
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const res = await getMovieListFromApi('popular')
+			const res = await getMoviesFromPopular()
 			console.log(res.data)
 			setMovies(res.data)
 		}
