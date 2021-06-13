@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import MovieListItem from './MovieListItem'
+import PopularMovieListItem from './MovieListItem'
 import styles from './MovieListItem.module.scss'
 import { getMoviesFromPopular } from '../api/API'
 
@@ -22,7 +22,7 @@ const MovieList = () => {
 			<div className={styles.cardList}>
 				{movies &&
 					movies.map((movie) => (
-						<MovieListItem movie={movie} key={movie.id} />
+						<PopularMovieListItem movie={movie} key={movie.id} />
 					))}
 			</div>
 		</>

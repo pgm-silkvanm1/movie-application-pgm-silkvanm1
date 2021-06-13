@@ -15,7 +15,10 @@ const MovieListItem = ({ movie }) => {
         alt={movie.title + ' poster'}/>
       </Link>
 
-        <h3 className={styles.title}><Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>{ movie.title }</Link> <span className={styles.numViews}><FiFilm /><span>{ movie.numViews }</span></span>
+        <h3 className={styles.title}><Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>{ movie.title }</Link>
+        <span className={styles.numViews}><FiFilm />
+          <span>{ movie.numViews }</span>
+        </span>
         </h3>
     </article>
   )
