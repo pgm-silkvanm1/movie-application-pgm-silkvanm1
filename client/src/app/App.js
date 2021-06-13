@@ -18,20 +18,20 @@ import {
 	AccountPage,
 } from './pages'
 
-const themes = {
-	dark: '',
-	light: '',
-}
+import { ThemeContext } from './utilities/theme'
 
-const ThemeContext = React.createContext(themes.dark)
+import { useState } from 'react'
 
 function App() {
+
+	const [theme, setTheme] = useState('light')
+
 	return (
-		<div className={styles.app}>
-			<FirebaseProvider>
-				<AuthProvider>
-					<FirestoreProvider>
-						<ThemeContext.Provider value={themes.dark}>
+		<ThemeContext.Provider value={{theme,setTheme}}>
+			<div className={styles.app} data-theme={theme}>
+				<FirebaseProvider>
+					<AuthProvider>
+						<FirestoreProvider>
 							<Router basename={''}>
 								<Switch>
 									<Route
@@ -70,11 +70,11 @@ function App() {
 									/>
 								</Switch>
 							</Router>
-						</ThemeContext.Provider>
-					</FirestoreProvider>
-				</AuthProvider>
-			</FirebaseProvider>
-		</div>
+						</FirestoreProvider>
+					</AuthProvider>
+				</FirebaseProvider>
+			</div>
+		</ThemeContext.Provider>
 	)
 }
 

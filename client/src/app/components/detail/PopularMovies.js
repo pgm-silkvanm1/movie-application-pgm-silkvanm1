@@ -3,7 +3,7 @@ import MovieListItem from './MovieListItem'
 import styles from './MovieListItem.module.scss'
 import { getMoviesFromPopular } from '../api/API'
 
-const MovieList = () => {
+const PopularMovieList = () => {
 	const [movies, setMovies] = useState()
 
 	useEffect(() => {
@@ -29,4 +29,4 @@ const MovieList = () => {
 	)
 }
 
-export default MovieList
+export default PopularMovieList

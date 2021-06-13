@@ -25,7 +25,7 @@ const getMoviesFromKeyword = async (id) => {
 }
 
 const getMoviesFromTrending = async () => {
-    const res = axios.get(baseUrl + 'trending/all/', + 'week' , { params: { api_key: apiKey } })
+    const res = axios.get(baseUrl + 'trending/all/week' , { params: { api_key: apiKey } })
     return res
 }
 

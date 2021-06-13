@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
 import MovieListItem from './MovieListItem'
 import styles from './MovieListItem.module.scss'
-import { getMoviesFromPopular } from '../api/API'
+import { getMoviesFromTrending } from '../api/API'
 
-const MovieList = () => {
+const TrendingMovieList = () => {
 	const [movies, setMovies] = useState()
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const res = await getMoviesFromPopular()
+			const res = await getMoviesFromTrending()
 			const data = await res
+            console.log(data.data.results)
 			setMovies(data.data.results)
 		}
 
 		fetchData()
-	}, [getMoviesFromPopular])
+	}, [getMoviesFromTrending])
 
 	return (
 		<>
-			<h1> Popular</h1>
+			<h1>Trending</h1>
 			<div className={styles.cardList}>
 				{movies &&
 					movies.map((movie) => (
@@ -29,4 +30,4 @@ const MovieList = () => {
 	)
 }
 
-export default MovieList
+export default TrendingMovieList

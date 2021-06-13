@@ -3,6 +3,8 @@ import MovieCard from '../components/layout/MovieCard'
 import { getMovieListFromApi, getMoviesFromPopular } from '../components/api/API'
 import React, {useState} from "react";
 import styles from '../components/layout/MovieCard.module.scss';
+import PopularMovieList from '../components/detail/PopularMovies'
+import TrendingMovieList from '../components/detail/TrendingMovieList'
 
 const HomePage = () => {
 
@@ -13,8 +15,7 @@ const HomePage = () => {
       
   const searchMovies = async (e) => {
     e.preventDefault();
-                  
-          
+                     
     try {
       const res = await getMovieListFromApi(query);
       const data  = await res;
@@ -24,9 +25,6 @@ const HomePage = () => {
       console.error(err);
     }
   }
-
-
-
       
   return (
     <BaseLayout>
@@ -42,7 +40,9 @@ const HomePage = () => {
           {movies && movies.map(movie => (
             <MovieCard movie={movie} key={movie.id} />
           ))}
-      </div>    
+      </div>
+      <PopularMovieList/>
+      <TrendingMovieList/>
     </BaseLayout>
   );
 };
