@@ -7,7 +7,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Link to={Routes.FOUROFOUR}>404</Link>
+      
     </footer>
   );
 };

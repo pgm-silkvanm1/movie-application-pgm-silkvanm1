@@ -1,0 +1,48 @@
+.detailcard{
+
+    .poster {
+        margin: 0;
+        img {
+            width: 100%;
+        }
+    }
+
+    .movie{
+        padding: 2rem;
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            width: 20%;
+            margin-top: 0;;
+
+            li{
+                list-style-type: none;
+            }
+        }
+
+        .rating{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 5rem;
+            height: 2rem;
+
+            img {
+                width: 1rem;
+                height: 1rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        p {
+            width: 50%;
+        }
+    }
+}
