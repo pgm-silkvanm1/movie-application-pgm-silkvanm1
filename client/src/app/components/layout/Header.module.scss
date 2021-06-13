@@ -1,9 +1,6 @@
 .header {
     width: 100vw;
-    background-color: #F6D0B1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
 }
 
 .header nav ul {
@@ -17,6 +14,11 @@
 }
 
 .header nav ul li a {
-    color: #CE4760;
+    font-size: 1.5rem;
+    color: white;
     text-decoration: none;
+}
+
+.header nav ul li a:hover {
+    color: red;
 }

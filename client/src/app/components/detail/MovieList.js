@@ -1,27 +1,31 @@
 import { useState, useEffect } from 'react'
 import MovieListItem from './MovieListItem'
+import styles from './MovieListItem.module.scss';
 import { getMovieList, getMovieListFromApi, getMoviesFromPopular } from '../api/API'
 
-const MovieList = ({ filter }) => {
+const MovieList = () => {
 	const [movies, setMovies] = useState()
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await getMoviesFromPopular()
-			console.log(res.data)
-			setMovies(res.data)
+			const data = await res
+			setMovies(data.data.results)
 		}
 
 		fetchData()
 	})
 
 	return (
-		<div className="movie-list">
-			{!!movies &&
-				movies.results.map((movie) => {
-					return <MovieListItem key={movie.id} movie={movie} />
-				})}
+		<>
+		<h1> Popular</h1>
+		<div className={styles.cardList}>
+			
+		{movies && movies.map(movie => (
+            <MovieListItem movie={movie} key={movie.id} />
+          ))}
 		</div>
+		</>
 	)
 }
 
