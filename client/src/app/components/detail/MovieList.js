@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import MovieListItem from './MovieListItem'
-import styles from './MovieListItem.module.scss';
-import { getMovieList, getMovieListFromApi, getMoviesFromPopular } from '../api/API'
+import styles from './MovieListItem.module.scss'
+import {
+	getMovieList,
+	getMovieListFromApi,
+	getMoviesFromPopular,
+} from '../api/API'
 
 const MovieList = () => {
 	const [movies, setMovies] = useState()
@@ -14,17 +18,17 @@ const MovieList = () => {
 		}
 
 		fetchData()
-	})
+	}, [getMoviesFromPopular])
 
 	return (
 		<>
-		<h1> Popular</h1>
-		<div className={styles.cardList}>
-			
-		{movies && movies.map(movie => (
-            <MovieListItem movie={movie} key={movie.id} />
-          ))}
-		</div>
+			<h1> Popular</h1>
+			<div className={styles.cardList}>
+				{movies &&
+					movies.map((movie) => (
+						<MovieListItem movie={movie} key={movie.id} />
+					))}
+			</div>
 		</>
 	)
 }
