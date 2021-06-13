@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { stringify } from "uuid";
-import { DetailDetails, DetailReviewList } from "../components/detail";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
 import { getDetailById, getMoviesFromId } from '../components/api/API'
@@ -39,7 +37,6 @@ const DetailPage = () => {
         <p>
           {detail.data.overview}
         </p>
-        
         <h4>Tags</h4>
         <ul>
           {detail.data.genres.map(genre => <li key={genre.id}> {genre.name} </li>)}
