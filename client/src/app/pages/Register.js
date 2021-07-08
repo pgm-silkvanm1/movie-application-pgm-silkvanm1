@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-
-import { useAuth } from '../contexts/firebase/auth.context'
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/firebase/auth.context';
 
 const Register = ({ children }) => {
-	const history = useHistory()
+	const history = useHistory();
 	const [signInForm, setSignInForm] = useState({
 		txtEmail: '',
 		txtPassword: '',
-	})
+	});
 	const {
 		currentUser,
 		signInWithEmailAndPassword,
 		signOut,
 		createUserWithEmailAndPassword,
-	} = useAuth()
+	} = useAuth();
 
 	const handleSubmit = async (ev) => {
 		ev.preventDefault()
@@ -25,15 +24,15 @@ const Register = ({ children }) => {
 		)
 		if (result) {
 			history.goBack()
-		}
-	}
+		};
+	};
 
 	const handleInputChange = async (ev) => {
 		setSignInForm({
 			...signInForm,
 			[ev.target.name]: ev.target.value,
 		})
-	}
+	};
 
 	return (
 		<div className="page page--sign-in">
@@ -103,6 +102,6 @@ const Register = ({ children }) => {
 			</div>
 		</div>
 	)
-}
+};
 
 export default Register

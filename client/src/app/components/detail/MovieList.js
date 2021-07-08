@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react'
-import PopularMovieListItem from './MovieListItem'
-import styles from './MovieListItem.module.scss'
-import { getMoviesFromPopular } from '../api/API'
+import { useState, useEffect } from 'react';
+import PopularMovieListItem from './MovieListItem';
+import styles from './MovieListItem.module.scss';
+import { getMoviesFromPopular } from '../api/API';
 
 const MovieList = () => {
-	const [movies, setMovies] = useState()
+	const [movies, setMovies] = useState();
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await getMoviesFromPopular()
 			const data = await res
 			setMovies(data.data.results)
-		}
+		};
 
 		fetchData()
-	}, [getMoviesFromPopular])
+	}, [getMoviesFromPopular]);
 
 	return (
 		<>
@@ -27,6 +27,6 @@ const MovieList = () => {
 			</div>
 		</>
 	)
-}
+};
 
 export default MovieList

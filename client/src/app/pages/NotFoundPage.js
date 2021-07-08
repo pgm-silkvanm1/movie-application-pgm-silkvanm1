@@ -1,7 +1,5 @@
 import { useHistory } from "react-router-dom";
-
 import * as Routes from '../routes';
-
 import styles from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {

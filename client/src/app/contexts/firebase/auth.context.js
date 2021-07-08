@@ -1,16 +1,16 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-import 'firebase/auth'
-import { useFirebase } from './firebase.context'
+import { createContext, useContext, useEffect, useState } from 'react';
+import 'firebase/auth';
+import { useFirebase } from './firebase.context';
 
-const AuthContext = createContext(null)
-const useAuth = () => useContext(AuthContext)
+const AuthContext = createContext(null);
+const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(
 		JSON.parse(localStorage.getItem('react-firebase-pgm-4:currentUser'))
-	)
-	const { app } = useFirebase()
-	const auth = app.auth()
+	);
+	const { app } = useFirebase();
+	const auth = app.auth();
 
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
 		return () => {
 			unsubscribe()
 		}
-	}, [auth])
+	}, [auth]);
 
 	const signInWithEmailAndPassword = async (email, password) => {
 		try {
@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
 		} catch (error) {
 			console.log(error)
 		}
-	}
+	};
 
 	const createUserWithEmailAndPassword = async (email, password) => {
 		try {
@@ -40,11 +40,11 @@ const AuthProvider = ({ children }) => {
 		} catch (error) {
 			console.log(error)
 		}
-	}
+	};
 	const signOut = async () => {
 		localStorage.setItem('react-firebase-pgm-4:currentUser', null)
 		return await auth.signOut()
-	}
+	};
 
 	return (
 		<AuthContext.Provider
@@ -58,6 +58,6 @@ const AuthProvider = ({ children }) => {
 			{children}
 		</AuthContext.Provider>
 	)
-}
+};
 
 export { AuthContext, AuthProvider, useAuth }

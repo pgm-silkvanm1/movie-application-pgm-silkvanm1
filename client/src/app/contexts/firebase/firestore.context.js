@@ -1,30 +1,29 @@
-import React, { useContext } from 'react'
-import 'firebase/firestore'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useContext } from 'react';
+import 'firebase/firestore';
+import { v4 as uuidv4 } from 'uuid';
+import { useFirebase } from './firebase.context';
 
-import { useFirebase } from './firebase.context'
-
-const FirestoreContext = React.createContext(null)
-const useFirestore = () => useContext(FirestoreContext)
+const FirestoreContext = React.createContext(null);
+const useFirestore = () => useContext(FirestoreContext);
 
 const FirestoreProvider = ({ children }) => {
-	const { app } = useFirebase()
-	const db = app.firestore()
+	const { app } = useFirebase();
+	const db = app.firestore();
 
 	const getProjects = async () => {
-		const query = db.collection('projects').orderBy('createdAt', 'desc')
-		const querySnapshot = await query.get()
+		const query = db.collection('projects').orderBy('createdAt', 'desc');
+		const querySnapshot = await query.get();
 		const projects = querySnapshot.docs.map((doc) => {
 			return {
 				uid: doc.id,
 				...doc.data(),
 			}
-		})
+		});
 		return projects
-	}
+	};
 
 	const getPagedProjects = async (itemsPerPage = 10, lastVisible = null) => {
-		let query = null
+		let query = null;
 
 		if (lastVisible === null) {
 			query = db
@@ -39,29 +38,29 @@ const FirestoreProvider = ({ children }) => {
 				.limit(itemsPerPage)
 		}
 
-		const querySnapshot = await query.get()
-		const lastVisibleDoc = querySnapshot.docs[querySnapshot.docs.length - 1]
+		const querySnapshot = await query.get();
+		const lastVisibleDoc = querySnapshot.docs[querySnapshot.docs.length - 1];
 		const projects = querySnapshot.docs.map((doc) => {
 			return {
 				uid: doc.id,
 				...doc.data(),
 			}
-		})
+		});
 		return { projects, itemsPerPage, lastVisibleDoc }
-	}
+	};
 
 	const getDetailById = async (projectId) => {
-		const docRef = db.collection('projects').doc(projectId)
+		const docRef = db.collection('projects').doc(projectId);
 		const doc = await docRef.get()
 		if (!doc.exists) {
 			throw new Error('Document does not exist!')
-		}
+		};
 
 		return {
 			uid: doc.id,
 			...doc.data(),
 		}
-	}
+	};
 
 	const getProjectReviews = async (projectId) => {
 		const query = db
@@ -69,18 +68,18 @@ const FirestoreProvider = ({ children }) => {
 			.doc(projectId)
 			.collection('reviews')
 			.orderBy('createdAt', 'desc')
-		const querySnapshot = await query.get()
+		const querySnapshot = await query.get();
 		const projectReviews = querySnapshot.docs.map((doc) => {
 			return {
 				uid: doc.id,
 				...doc.data(),
 			}
-		})
+		});
 		return projectReviews
-	}
+	};
 
 	const addReview = async (projectRef, review) => {
-		var reviewRef = projectRef.collection('reviews').doc(uuidv4())
+		var reviewRef = projectRef.collection('reviews').doc(uuidv4());
 
 		return db.runTransaction((transaction) => {
 			return transaction.get(projectRef).then((res) => {
@@ -105,7 +104,7 @@ const FirestoreProvider = ({ children }) => {
 				transaction.set(reviewRef, review)
 			})
 		})
-	}
+	};
 
 	return (
 		<FirestoreContext.Provider
@@ -120,6 +119,6 @@ const FirestoreProvider = ({ children }) => {
 			{children}
 		</FirestoreContext.Provider>
 	)
-}
+};
 
 export { FirestoreContext, FirestoreProvider, useFirestore }

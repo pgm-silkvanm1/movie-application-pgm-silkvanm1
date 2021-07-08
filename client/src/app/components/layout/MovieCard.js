@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import * as Routes from '../../routes';
 
 const MovieCard = ({movie}) => {
-
     return (
          <div className={styles.card}>
             <Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
@@ -21,6 +20,6 @@ const MovieCard = ({movie}) => {
             </Link>
         </div>
     )
-}
+};
 
 export default MovieCard;

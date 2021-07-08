@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeContext } from '../../utilities/theme'
-
+import { ThemeContext } from '../../utilities/theme';
 import { useContext } from 'react';
 
 const ThemeToggler = () => {
@@ -11,7 +10,7 @@ const ThemeToggler = () => {
         e.preventDefault()
 
         setTheme(theme === 'light'? 'dark' : 'light');
-    }
+    };
 
     return(
         <button onClick={themeHandler}>
@@ -20,6 +19,6 @@ const ThemeToggler = () => {
             </span>
         </button>
     )
-}
+};
 
 export default ThemeToggler;

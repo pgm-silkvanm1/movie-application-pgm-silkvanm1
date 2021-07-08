@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
-import MovieListItem from './MovieListItem'
-import styles from './MovieListItem.module.scss'
-import { getMoviesFromUpcoming } from '../api/API'
+import { useState, useEffect } from 'react';
+import MovieListItem from './MovieListItem';
+import styles from './MovieListItem.module.scss';
+import { getMoviesFromUpcoming } from '../api/API';
 
 const UpcomingMovieList = () => {
-	const [movies, setMovies] = useState()
+	const [movies, setMovies] = useState();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -12,7 +12,7 @@ const UpcomingMovieList = () => {
 			const data = await res
             console.log(data.data.results)
 			setMovies(data.data.results)
-		}
+		};
 
 		fetchData()
 	}, [getMoviesFromUpcoming])
@@ -28,6 +28,6 @@ const UpcomingMovieList = () => {
 			</div>
 		</>
 	)
-}
+};
 
 export default UpcomingMovieList

@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-
-import { useAuth } from '../contexts/firebase/auth.context'
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/firebase/auth.context';
 
 const SignInPage = ({ children }) => {
 	const history = useHistory()
 	const [signInForm, setSignInForm] = useState({
 		txtEmail: '',
 		txtPassword: '',
-	})
-	const { currentUser, signInWithEmailAndPassword, signOut } = useAuth()
+	});
+	const { currentUser, signInWithEmailAndPassword, signOut } = useAuth();
 
 	const handleSubmit = async (ev) => {
 		ev.preventDefault()
@@ -20,15 +19,15 @@ const SignInPage = ({ children }) => {
 		)
 		if (result) {
 			history.goBack()
-		}
-	}
+		};
+	};
 
 	const handleInputChange = async (ev) => {
 		setSignInForm({
 			...signInForm,
 			[ev.target.name]: ev.target.value,
 		})
-	}
+	};
 
 	return (
 		<div className="page page--sign-in">
@@ -98,6 +97,6 @@ const SignInPage = ({ children }) => {
 			</div>
 		</div>
 	)
-}
+};
 
 export default SignInPage

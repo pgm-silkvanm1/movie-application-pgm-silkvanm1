@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
-import { getDetailById, getMoviesFromId } from '../components/api/API'
-import styles from './DetailPage.module.scss'
+import { getDetailById, getMoviesFromId } from '../components/api/API';
+import styles from './DetailPage.module.scss';
 
 const DetailPage = () => {
   const { id } = useParams();

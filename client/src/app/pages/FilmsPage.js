@@ -1,8 +1,7 @@
-import { MovieList } from '../components/detail'
-import { BaseLayout } from '../layouts'
-
-import TrendingMovieList from '../components/detail/TrendingMovieList'
-import UpcomingMovieList from '../components/detail/UpcomingMovieList'
+import { MovieList } from '../components/detail';
+import { BaseLayout } from '../layouts';
+import TrendingMovieList from '../components/detail/TrendingMovieList';
+import UpcomingMovieList from '../components/detail/UpcomingMovieList';
 
 const FilmsPage = () => {
 	return (
@@ -12,6 +11,6 @@ const FilmsPage = () => {
 			<TrendingMovieList/>
 		</BaseLayout>
 	)
-}
+};
 
 export default FilmsPage

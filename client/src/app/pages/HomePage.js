@@ -1,10 +1,10 @@
 import { BaseLayout } from '../layouts';
-import MovieCard from '../components/layout/MovieCard'
-import { getMovieListFromApi, getMoviesFromPopular } from '../components/api/API'
+import MovieCard from '../components/layout/MovieCard';
+import { getMovieListFromApi, getMoviesFromPopular } from '../components/api/API';
 import React, {useState} from "react";
 import styles from '../components/layout/MovieCard.module.scss';
-import MovieList from '../components/detail/MovieList'
-import TrendingMovieList from '../components/detail/TrendingMovieList'
+import MovieList from '../components/detail/MovieList';
+import TrendingMovieList from '../components/detail/TrendingMovieList';
 
 const HomePage = () => {
   //states- input query, movies
@@ -23,7 +23,7 @@ const HomePage = () => {
     }catch(err){
       console.error(err);
     }
-  }
+  };
       
   return (
     <BaseLayout>

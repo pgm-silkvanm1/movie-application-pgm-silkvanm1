@@ -1,14 +1,12 @@
-import React from 'react'
+import React from 'react';
 import {
 	AuthProvider,
 	FirebaseProvider,
 	FirestoreProvider,
-} from './contexts/firebase'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-import * as Routes from './routes'
-
-import styles from './App.module.scss'
+} from './contexts/firebase';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import * as Routes from './routes';
+import styles from './App.module.scss';
 import {
 	DetailPage,
 	FilmsPage,
@@ -16,15 +14,13 @@ import {
 	SignInPage,
 	Register,
 	AccountPage,
-} from './pages'
-
-import { ThemeContext } from './utilities/theme'
-
-import { useState } from 'react'
+} from './pages';
+import { ThemeContext } from './utilities/theme';
+import { useState } from 'react';
 
 function App() {
 
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState('light');
 
 	return (
 		<ThemeContext.Provider value={{theme,setTheme}}>
@@ -76,6 +72,6 @@ function App() {
 			</div>
 		</ThemeContext.Provider>
 	)
-}
+};
 
 export default App
