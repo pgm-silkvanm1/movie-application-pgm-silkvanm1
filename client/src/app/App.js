@@ -24,46 +24,19 @@ function App() {
 
 	return (
 		<ThemeContext.Provider value={{theme,setTheme}}>
-			<div className={styles.app} data-theme={theme}>
+		    <div className={styles.app} data-theme={theme}>
 				<FirebaseProvider>
 					<AuthProvider>
 						<FirestoreProvider>
 							<Router basename={''}>
 								<Switch>
-									<Route
-										exact
-										path={Routes.LANDING}
-										component={HomePage}
-									/>
-									<Route
-										from={Routes.HOME}
-										to={Routes.LANDING}
-									/>
-									<Route
-										exact
-										path={Routes.MOVIE_DETAILS}
-										component={DetailPage}
-									/>
-									<Route
-										exact
-										path={Routes.MOVIES}
-										component={FilmsPage}
-									/>
-									<Route
-										exact
-										path={Routes.AUTH_SIGN_IN}
-										component={SignInPage}
-									/>
-									<Route
-										exact
-										path={Routes.AUTH_REGISTER}
-										component={Register}
-									/>
-									<Route
-										exact
-										path={Routes.ACCOUNT}
-										component={AccountPage}
-									/>
+								    <Route exact path={Routes.LANDING} component={HomePage}/>
+									<Route from={Routes.HOME} to={Routes.LANDING}/>
+									<Route exact path={Routes.MOVIE_DETAILS} component={DetailPage}/>
+									<Route exact path={Routes.MOVIES} component={FilmsPage}/>
+									<Route exact path={Routes.AUTH_SIGN_IN} component={SignInPage}/>
+									<Route exact path={Routes.AUTH_REGISTER} component={Register}/>
+									<Route exact path={Routes.ACCOUNT} component={AccountPage}/>
 								</Switch>
 							</Router>
 						</FirestoreProvider>

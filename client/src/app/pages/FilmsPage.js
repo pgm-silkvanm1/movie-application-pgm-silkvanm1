@@ -13,4 +13,4 @@ const FilmsPage = () => {
 	)
 };
 
-export default FilmsPage
+export default FilmsPage;

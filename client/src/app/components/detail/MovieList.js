@@ -20,13 +20,12 @@ const MovieList = () => {
 		<>
 			<h1> Popular</h1>
 			<div className={styles.cardList}>
-				{movies &&
-					movies.map((movie) => (
-						<PopularMovieListItem movie={movie} key={movie.id} />
-					))}
+				{movies && movies.map((movie) => (
+					<PopularMovieListItem movie={movie} key={movie.id} />
+				))}
 			</div>
 		</>
 	)
 };
 
-export default MovieList
+export default MovieList;

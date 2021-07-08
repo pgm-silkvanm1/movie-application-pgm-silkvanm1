@@ -21,10 +21,9 @@ const UpcomingMovieList = () => {
 		<>
 			<h1>Upcoming</h1>
 			<div className={styles.cardList}>
-				{movies &&
-					movies.map((movie) => (
-						<MovieListItem movie={movie} key={movie.id} />
-					))}
+				{movies && movies.map((movie) => (
+					<MovieListItem movie={movie} key={movie.id} />
+				))}
 			</div>
 		</>
 	)
