@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
-import { getDetailById, getMoviesFromId } from '../components/api/API';
+import { getCastFromApi, getDetailById, getMoviesFromId } from '../components/api/API';
 import styles from './DetailPage.module.scss';
 
 const DetailPage = () => {
@@ -12,12 +12,24 @@ const DetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getMoviesFromId(id);
-      console.log(data)
+    //   console.log(data);
       setDetail(data);
     };
 
-    fetchData();    
-  }, [id, getMoviesFromId]);
+    fetchData();
+
+  }, [id, getMoviesFromId ]);
+
+//   useEffect(() => {
+//     const fetchCast = async () => {
+//         const cast = await getCastFromApi(id);
+//         console.log(cast);
+//         setDetail(cast);
+//     };
+
+//     fetchCast();
+
+//   }, [id, getCastFromApi]);
 
   return (
     <BaseLayout>

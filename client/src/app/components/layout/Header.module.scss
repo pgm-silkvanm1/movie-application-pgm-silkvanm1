@@ -1,12 +1,15 @@
 .header {
-    background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
+    // background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
+    background-image: url('https://t4.ftcdn.net/jpg/00/76/36/13/240_F_76361393_AxXCIZfYFsKXhfUffgjWtIvzuPhRgmHh.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15rem;
 }
 
 .header nav ul {
     display: flex;
     list-style: none;
     margin: 0;
-    
 }
 
 .header nav ul li {
@@ -16,10 +19,13 @@
 
 .header nav ul li a {
     font-size: 1.5rem;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 .header nav ul li a:hover {
-    color: red;
+    color: grey;
+    border-bottom: 1px solid grey;
+    padding-bottom: 2px;
 }
+

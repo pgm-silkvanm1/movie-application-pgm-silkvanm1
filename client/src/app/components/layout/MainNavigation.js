@@ -21,6 +21,9 @@ const MainNavigation = () => {
           <Link to={Routes.MOVIES}>Movies</Link>
         </li>
         <li>
+            <Link to={Routes.SERIES}>Series</Link>
+        </li>
+        <li>
           {!!currentUser
           ? <button onClick={signOut}><img className={styles.user__avatar} src={currentUser.photoURL} alt={currentUser.email}/>Logout</button>
           : <Link to={Routes.AUTH_SIGN_IN}>Sign In</Link>
