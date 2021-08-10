@@ -9,6 +9,7 @@ import * as Routes from './routes';
 import styles from './App.module.scss';
 import {
 	DetailPage,
+    SeriesDetailPage,
 	FilmsPage,
     SeriesPage,
 	HomePage,
@@ -34,6 +35,7 @@ function App() {
 								    <Route exact path={Routes.LANDING} component={HomePage}/>
 									<Route from={Routes.HOME} to={Routes.LANDING}/>
 									<Route exact path={Routes.MOVIE_DETAILS} component={DetailPage}/>
+                                    <Route exact path={Routes.SERIE_DETAILS} component={SeriesDetailPage}/>
 									<Route exact path={Routes.MOVIES} component={FilmsPage}/>
                                     <Route exact path={Routes.SERIES} component={SeriesPage}/>
 									<Route exact path={Routes.AUTH_SIGN_IN} component={SignInPage}/>

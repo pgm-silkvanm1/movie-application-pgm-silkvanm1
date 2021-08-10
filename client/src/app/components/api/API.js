@@ -19,6 +19,11 @@ const getMoviesFromId = async (id) => {
 	return res;
 };
 
+const getSeriesFromId = async (id) => {
+    const res = axios.get(baseUrl + 'tv/' + id, { params: { api_key: apiKey } });
+	return res;
+};
+
 const getGenreFromApi = async (filter) => {
     const res = axios.get(baseUrl + 'genre/movie/list/' + filter , { params: { api_key: apiKey } });
 	return res;
@@ -62,7 +67,8 @@ const getSeriesFromLatest = async () => {
 export { 
     getMovieListFromApi,
     getSearch,
-    getMoviesFromId, 
+    getMoviesFromId,
+    getSeriesFromId,
     getGenreFromApi, 
     getMoviesFromKeyword, 
     getMoviesFromTrending, 

@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
-import { getCastFromApi, getDetailById, getMoviesFromId } from '../components/api/API';
-import styles from './DetailPage.module.scss';
+import { getSeriesFromId } from '../components/api/API';
+import styles from './SeriesDetailPage.module.scss';
 
-const DetailPage = () => {
+const SeriesDetailPage = () => {
   const { id } = useParams();
   const [ detail, setDetail ] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getMoviesFromId(id);
-    //   console.log(data);
+      const data = await getSeriesFromId(id);
+      console.log(data);
       setDetail(data);
     };
 
     fetchData();
 
-  }, [id, getMoviesFromId ]);
+  }, [id, getSeriesFromId ]);
 
   return (
     <BaseLayout>
@@ -28,7 +27,7 @@ const DetailPage = () => {
         <img src ={`https://image.tmdb.org/t/p/original/${detail.data.backdrop_path}`}/>
       </div>
       <div className={styles.movie}>
-        <h2>{detail.data.original_title}</h2>
+        <h2>{detail.data.name}</h2>
         <div className={styles.rating}>
           <img src='https://image.flaticon.com/icons/png/512/1828/1828884.png'/>
           <p>
@@ -50,4 +49,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default SeriesDetailPage;
