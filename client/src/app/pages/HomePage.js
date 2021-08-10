@@ -1,6 +1,6 @@
 import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard';
-import { getMovieListFromApi, getMoviesFromPopular } from '../components/api/API';
+import { getMovieListFromApi, getSearch } from '../components/api/API';
 import React, {useState} from 'react';
 import styles from '../components/layout/MovieCard.module.scss';
 import MovieList from '../components/detail/MovieList';

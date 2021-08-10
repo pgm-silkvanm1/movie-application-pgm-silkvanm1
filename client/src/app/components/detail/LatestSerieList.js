@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react';
-import PopularSerieListItem from './SerieListItem';
+import SerieListItem from './SerieListItem';
 import styles from './MovieListItem.module.scss';
-import { getSeriesFromPopular } from '../api/API';
+import { getSeriesFromLatest } from '../api/API';
 
-const SerieList = () => {
+const LatestSerieList = () => {
 	const [series, setSeries] = useState();
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const res = await getSeriesFromPopular()
+			const res = await getSeriesFromLatest()
 			const data = await res
+            console.log(data)
 			setSeries(data.data.results)
 		};
 
 		fetchData()
-	}, [getSeriesFromPopular]);
+	}, [getSeriesFromLatest])
+
 
 	return (
 		<>
-			<h1>Popular</h1>
+			<h1>Latest</h1>
 			<div className={styles.cardList}>
 				{series && series.map((serie) => (
-					<PopularSerieListItem serie={serie} key={serie.id} />
+					<SerieListItem serie={serie} key={serie.id} />
 				))}
 			</div>
 		</>
 	)
 };
 
-export default SerieList;
+export default LatestSerieList

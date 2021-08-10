@@ -1,23 +1,23 @@
 [data-theme="light"]{
     --text-color: black;
-    --background-color: white;
+    --background-color: rgb(165, 163, 163);
 }
   
 [data-theme="dark"]{
     --text-color: #fcfcfc;
-    --background-color: #1d1c1c;
+    --background-color: #131212;
 }
 
 .app {
     color: var(--text-color);
     background-color: var(--background-color);
 
-    .MovieCard_card__20UCp{
-        color: black;
+    // .MovieCard_card__20UCp{
+    //     color: black;
 
-        div{
-            color: black;
-        }
-    }
+    //     div{
+    //         color: black;
+    //     }
+    // }
   
 }

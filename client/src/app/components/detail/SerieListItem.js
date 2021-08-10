@@ -9,10 +9,10 @@ const SerieListItem = ({ serie }) => {
       <Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>
       <img className={styles.poster}
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${serie.poster_path}`}
-        alt={serie.title + ' poster'}/>
+        alt={serie.name + ' poster'}/>
       </Link>
 
-        <h3 className={styles.title}><Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>{ serie.title }</Link>
+        <h3 className={styles.title}><Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>{ serie.name }</Link>
         <span className={styles.numViews}>
           <span>{ serie.numViews }</span>
         </span>

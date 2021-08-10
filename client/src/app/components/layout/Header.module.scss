@@ -1,9 +1,7 @@
 .header {
-    // background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
-    background-image: url('https://t4.ftcdn.net/jpg/00/76/36/13/240_F_76361393_AxXCIZfYFsKXhfUffgjWtIvzuPhRgmHh.jpg');
+    background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
     background-repeat: no-repeat;
     background-position: center;
-    height: 15rem;
 }
 
 .header nav ul {
@@ -19,13 +17,13 @@
 
 .header nav ul li a {
     font-size: 1.5rem;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .header nav ul li a:hover {
     color: grey;
     border-bottom: 1px solid grey;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 

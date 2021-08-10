@@ -10,7 +10,7 @@ const UpcomingMovieList = () => {
 		const fetchData = async () => {
 			const res = await getMoviesFromUpcoming()
 			const data = await res
-            console.log(data.data.results)
+            // console.log(data.data.results)
 			setMovies(data.data.results)
 		};
 

@@ -10,7 +10,7 @@ const TrendingMovieList = () => {
 		const fetchData = async () => {
 			const res = await getMoviesFromTrending()
 			const data = await res
-            console.log(data.data.results)
+            // console.log(data.data.results)
 			setMovies(data.data.results)
 		};
 

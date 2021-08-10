@@ -1,14 +1,14 @@
 import SerieList from '../components/detail/SerieList';
 import { BaseLayout } from '../layouts';
-// import TrendingSerieList from '../components/detail/TrendingSerieList';
-// import UpcomingSerieList from '../components/detail/UpcomingSerieList';
+import LatestSerieList from '../components/detail/LatestSerieList';
+import RatedSerieList from '../components/detail/RatedSerieList';
 
 const SeriesPage = () => {
 	return (
 		<BaseLayout>
-			{/* <UpcomingSerieList/> */}
 			<SerieList/>
-			{/* <TrendingSerieList/> */}
+			<RatedSerieList/>
+            <LatestSerieList/>
 		</BaseLayout>
 	)
 };

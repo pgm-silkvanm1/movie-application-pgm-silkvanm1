@@ -18,7 +18,7 @@ const MovieList = () => {
 
 	return (
 		<>
-			<h1> Popular</h1>
+			<h1>Popular</h1>
 			<div className={styles.cardList}>
 				{movies && movies.map((movie) => (
 					<PopularMovieListItem movie={movie} key={movie.id} />
