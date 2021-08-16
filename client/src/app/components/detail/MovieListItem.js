@@ -1,4 +1,4 @@
-import { FiFilm } from "react-icons/fi";
+
 import { Link } from 'react-router-dom';
 import * as Routes from '../../routes';
 import styles from './MovieListItem.module.scss';

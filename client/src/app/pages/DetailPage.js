@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
-import { getCastFromApi, getDetailById, getMoviesFromId } from '../components/api/API';
+import { getCastFromApi, getDetailById, getMoviesFromId, getVideoFromApi } from '../components/api/API';
 import styles from './DetailPage.module.scss';
 
 const DetailPage = () => {
@@ -44,6 +44,8 @@ const DetailPage = () => {
         </ul>
       </div>
     </div>}
+
+
       
 
     </BaseLayout>

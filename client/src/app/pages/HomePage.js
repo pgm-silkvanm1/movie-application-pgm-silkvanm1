@@ -1,10 +1,11 @@
 import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard';
-import { getMovieListFromApi, getSearch } from '../components/api/API';
+import { getMultiFromApi } from '../components/api/API';
 import React, {useState} from 'react';
 import styles from '../components/layout/MovieCard.module.scss';
 import MovieList from '../components/detail/MovieList';
 import TrendingMovieList from '../components/detail/TrendingMovieList';
+import Trailer from '../components/detail/Trailer';
 
 const HomePage = () => {
   //states- input query, movies
@@ -16,7 +17,7 @@ const HomePage = () => {
     e.preventDefault();
                      
     try {
-      const res = await getMovieListFromApi(query);
+      const res = await getMultiFromApi(query);
       const data  = await res;
       setMovies(data.data.results);
       // console.log(data)
@@ -42,6 +43,7 @@ const HomePage = () => {
       </div>
       <TrendingMovieList/>
       <MovieList/>
+      <Trailer/>
     </BaseLayout>
   );
 };
