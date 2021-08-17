@@ -25,12 +25,13 @@ h1 {
     }
 }
 
-article:hover {
-    opacity: 50%;
-
-    .overview{
-        opacity: 100%;
-        color: white;
-    }
+.poster:hover {
+    opacity: 40%;
 }
+
+.overview{
+    opacity: 100%;
+    color: white;
+}
+
 

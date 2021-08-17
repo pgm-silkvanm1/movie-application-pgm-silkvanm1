@@ -22,7 +22,7 @@ const getMultiFromApi = async (query) => {
 
 
 const getVideoFromApi = async () => {
-    const res = axios.get(baseUrl + 'movie/now_playing' , { params: { api_key: apiKey } });
+    const res = axios.get(baseUrl + `movie/436969/videos` , { params: { api_key: apiKey } });
     return res;
 };
 

@@ -20,6 +20,12 @@ const Trailer = () => {
 	return (
 		<>
 			<h1>Trailer</h1>
+            {/* <Loading/> : data.results[0] ? */}
+            {/* <div>
+                <figure>
+                    <img src={`https://img.youtube.com/vi/${data.results[0].key}/0.jpg`} alt=""/>
+                </figure>
+            </div> */}
 			<div className={styles.cardList}>
 				{trailer && trailer.map((trailer) => (
 					<MovieListItem trailer={trailer} key={trailer.id} />

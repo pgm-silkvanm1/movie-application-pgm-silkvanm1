@@ -10,6 +10,7 @@ const MovieList = () => {
 		const fetchData = async () => {
 			const res = await getMoviesFromPopular()
 			const data = await res
+            // console.log(data)
 			setMovies(data.data.results)
 		};
 
