@@ -40,7 +40,7 @@ const FilmsPage = () => {
                     <MovieCard movie={movie} key={movie.id} />
                 ))}
             </div>
-            <h1>MOVIES</h1>
+            <h1 className={styles.title}>MOVIES</h1>
 			<UpcomingMovieList/>
 			<MovieList/>
 			<TrendingMovieList/>

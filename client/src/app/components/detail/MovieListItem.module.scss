@@ -25,3 +25,12 @@ h1 {
     }
 }
 
+article:hover {
+    opacity: 50%;
+
+    .overview{
+        opacity: 100%;
+        color: white;
+    }
+}
+

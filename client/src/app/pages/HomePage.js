@@ -41,6 +41,7 @@ const HomePage = () => {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
+      <h1 className={styles.title}>Movie DataBase</h1>
       <TrendingMovieList/>
       <MovieList/>
       <Trailer/>

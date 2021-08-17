@@ -41,7 +41,7 @@ const SeriesPage = () => {
             <SerieCard serie={serie} key={serie.id} />
           ))}
       </div>
-      <h1>SERIES</h1>
+      <h1 className={styles.title}>SERIES</h1>
 			<SerieList/>
 			<RatedSerieList/>
             <LatestSerieList/>
