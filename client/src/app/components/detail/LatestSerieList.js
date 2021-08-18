@@ -20,7 +20,7 @@ const LatestSerieList = () => {
 
 	return (
 		<>
-			<h1>Latest</h1>
+			<h1>Airing Today</h1>
 			<div className={styles.cardList}>
 				{series && series.map((serie) => (
 					<SerieListItem serie={serie} key={serie.id} />

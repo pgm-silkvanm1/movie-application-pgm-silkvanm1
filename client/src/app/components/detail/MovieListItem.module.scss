@@ -16,6 +16,7 @@ h1 {
         h3{
             margin: 0 0 1rem 0;
             font-size: 1rem;
+            padding-left: 0.5rem;
 
             a {
                 color: rgb(255, 255, 255);
@@ -25,8 +26,15 @@ h1 {
     }
 }
 
+.poster {
+    opacity: 50%;
+    transform: scale(0.95);
+}
+
 .poster:hover {
-    opacity: 40%;
+    opacity: 100%;
+    transform: scale(1.0);
+    object-fit: cover;
 }
 
 .overview{

@@ -24,7 +24,7 @@ const MainNavigation = () => {
         </li>
         <li>
           {!!currentUser
-          ? <button onClick={signOut}><img className={styles.user__avatar} src={currentUser.photoURL} alt={currentUser.email}/>Logout</button>
+          ? <button className={styles.logOut} onClick={signOut}><img className={styles.user__avatar} src='https://image.flaticon.com/icons/png/512/1738/1738691.png' alt={currentUser.email}/>Logout</button>
           : <Link to={Routes.AUTH_SIGN_IN}>Sign In</Link>
           }    
         </li>

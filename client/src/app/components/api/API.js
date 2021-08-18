@@ -80,7 +80,7 @@ const getSeriesFromRating = async () => {
 };
 
 const getSeriesFromLatest = async () => {
-    const res = axios.get(baseUrl + 'tv/latest' , { params: { api_key: apiKey } });
+    const res = axios.get(baseUrl + 'tv/airing_today' , { params: { api_key: apiKey } });
     return res;
 };
 

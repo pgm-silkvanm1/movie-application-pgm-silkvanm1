@@ -1,9 +1,18 @@
-// .user__avatar {
-//     width: 32px;
-//     height: 32px;
-//     border-radius: 50%;
+.logOut{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
 
-//     border: 2px solid rgba(255, 255, 255, 1);
+    .user__avatar {
+        width: 1.3rem;
+        height: 1.3rem;
+        padding-right: 1rem;
+        color: white;
+    }
+}
 
-//     background-size: cover;
-// }
+.logOut:hover{
+    color: grey;
+    border-bottom: 1px solid grey;
+}

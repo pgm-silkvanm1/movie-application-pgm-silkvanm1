@@ -62,7 +62,7 @@
 }
   
 .cardlist {
-    margin-top: 4rem;
+    margin: 4rem 3rem;;
     display: flex;
     flex-wrap: wrap;
 }
@@ -71,21 +71,28 @@
     padding: 2rem 4rem;
     margin-top: 2rem;
     border-radius: 10px;
-    width: 15%;
+    width: 15rem;;
     margin-right: 2rem;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
     margin-bottom: 2rem;
-    // background-color: white;
     margin-right: auto;
     margin-left: auto;
+
+    .link {
+        text-decoration: none;
+        color: white;
+
+        .cardimage {
+            margin: 0 auto;
+            display: block;
+        }
+
+        .cardtitle {
+            margin-bottom: 0.5rem;
+            font-size: 3.2rem;
+        }
+    }
 }
   
-.cardtitle {
-    margin-bottom: 0.5rem;
-    font-size: 3.2rem;
-}
+
   
-.cardimage {
-    margin: 0 auto;
-    display: block;
-}

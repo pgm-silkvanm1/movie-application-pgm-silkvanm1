@@ -6,7 +6,7 @@ import * as Routes from '../../routes';
 const MovieCard = ({movie}) => {
     return (
          <div className={styles.card}>
-            <Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
+            <Link className={styles.link} to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
                 <img className={styles.cardimage}
                     src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                     alt={movie.title + ' poster'}
