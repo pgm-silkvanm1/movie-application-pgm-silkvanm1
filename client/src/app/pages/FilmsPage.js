@@ -34,7 +34,7 @@ const FilmsPage = () => {
                     placeholder="i.e. Jurassic Park"
                     value={query} onChange={(e) => setQuery(e.target.value)}
                 />
-                <button className={styles.gradientbtn1} type="submit">Search</button>
+                <button className={styles.btn1} type="submit"></button>
             </form>
             <div className={styles.cardlist}>
                 {movies && movies.map(movie => (

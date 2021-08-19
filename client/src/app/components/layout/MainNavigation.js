@@ -12,26 +12,24 @@ const MainNavigation = () => {
 
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to={Routes.LANDING}>Home</Link>
-        </li>
-        <li>
-          <Link to={Routes.MOVIES}>Movies</Link>
-        </li>
-        <li>
-            <Link to={Routes.SERIES}>Series</Link>
-        </li>
-        <li className={styles.containerTheme}>
-            <ThemeToggler/>
-        </li>
-        <li>
-          {!!currentUser
-          ? <button className={styles.logOut} onClick={signOut}><img className={styles.user__avatar} src='https://image.flaticon.com/icons/png/512/1738/1738691.png' alt={currentUser.email}/>Logout</button>
-          : <Link to={Routes.AUTH_SIGN_IN}>Sign In</Link>
-          }    
-        </li>
-
+        <div className={styles.user}>
+            {!!currentUser ? <button className={styles.logOut} onClick={signOut}><img className={styles.user__avatar} src='https://image.flaticon.com/icons/png/512/1738/1738691.png' alt={currentUser.email}/>Logout</button>
+            : <Link to={Routes.AUTH_SIGN_IN}>Sign In</Link>
+            }    
+        </div>
+        <ul>
+            <li>
+                <Link to={Routes.LANDING}>Home</Link>
+            </li>
+            <li>
+                <Link to={Routes.MOVIES}>Movies</Link>
+            </li>
+            <li>
+                <Link to={Routes.SERIES}>Series</Link>
+            </li>
+            <li className={styles.containerTheme}>
+                <ThemeToggler/>
+            </li>
       </ul>
     </nav>
   );

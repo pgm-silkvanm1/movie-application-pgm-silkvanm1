@@ -3,6 +3,7 @@
     text-align: center;
     width: 20rem;
     display: flex;
+    margin-top: 1rem;
 
     .input {
 
@@ -12,9 +13,8 @@
 
     }
 
-    .gradientbtn1 {
+    .btn1 {
         background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-
         border: white;
         width: 3rem;
         cursor: pointer;
@@ -30,21 +30,25 @@
     }
 }
   
-
-
 .title {
     font-size: 4.4rem;
     text-align: center
 }
+
+.cardlist {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    overflow-x: scroll;
+    margin-bottom: 2rem;
+}
   
-// @media (min-width:49rem){
-//     .form {
-//       grid-template-columns: auto 1fr auto;
-//       grid-gap: 1rem;
-//       align-items: center;
-//     }
+@media (min-width:49rem){
+    .form {
+   
+    }
   
-//     .input {
-//       margin-bottom: 0;
-//     }
-// }
+    .input {
+      margin-bottom: 0;
+    }
+}

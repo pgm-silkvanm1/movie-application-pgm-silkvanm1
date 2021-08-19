@@ -35,7 +35,7 @@ const SeriesPage = () => {
           placeholder="i.e. Loki"
           value={query} onChange={(e) => setQuery(e.target.value)}
         />
-        <button className={styles.gradientbtn1} type="submit">Search</button>
+        <button className={styles.btn1} type="submit"></button>
       </form>
       <div className={styles.cardlist}>
           {series && series.map(serie => (
