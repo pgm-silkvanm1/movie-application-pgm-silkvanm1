@@ -25,7 +25,6 @@ const MovieCard = ({ movie }) => {
                         </div>
                     )}
                 </div>
-                
             </Link>
         </div>
     )

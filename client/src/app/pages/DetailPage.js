@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useFirestore } from "../contexts/firebase/firestore.context";
 import { BaseLayout } from '../layouts';
-import { getCastFromApi, getDetailById, getMoviesFromId, getVideoFromApi } from '../components/api/API';
+import { getMoviesFromId } from '../components/api/API';
 import styles from './DetailPage.module.scss';
 
 const DetailPage = () => {
@@ -22,32 +21,28 @@ const DetailPage = () => {
 
   return (
     <BaseLayout>
-    {!!detail && 
-    <div className={styles.detailcard}>
-      <div className={styles.poster}>
-        <img src ={`https://image.tmdb.org/t/p/original/${detail.data.backdrop_path}`}/>
-      </div>
-      <div className={styles.movie}>
-        <h2>{detail.data.original_title}</h2>
-        <div className={styles.rating}>
-          <img src='https://image.flaticon.com/icons/png/512/1828/1828884.png'/>
-          <p>
-            {detail.data.vote_average}
-          </p>
-        </div>
-        <p>
-          {detail.data.overview}
-        </p>
-        <h4>Tags</h4>
-        <ul>
-          {detail.data.genres.map(genre => <li key={genre.id}> {genre.name} </li>)}
-        </ul>
-      </div>
-    </div>}
-
-
-      
-
+        {!!detail && 
+        <div className={styles.detailcard}>
+            <div className={styles.poster}>
+                <img src ={`https://image.tmdb.org/t/p/original/${detail.data.backdrop_path}`}/>
+            </div>
+            <div className={styles.movie}>
+                <h2>{detail.data.original_title}</h2>
+                <div className={styles.rating}>
+                    <img src='https://image.flaticon.com/icons/png/512/1828/1828884.png'/>
+                    <p>
+                        {detail.data.vote_average}
+                    </p>
+                </div>
+                <p>
+                    {detail.data.overview}
+                </p>
+                <h4>Tags</h4>
+                <ul>
+                    {detail.data.genres.map(genre => <li key={genre.id}> {genre.name} </li>)}
+                </ul>
+            </div>
+        </div>}
     </BaseLayout>
   );
 };

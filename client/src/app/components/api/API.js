@@ -19,8 +19,6 @@ const getMultiFromApi = async (query) => {
 };
 
 
-
-
 const getVideoFromApi = async () => {
     const res = axios.get(baseUrl + `movie/436969/videos` , { params: { api_key: apiKey } });
     return res;
@@ -37,9 +35,6 @@ const getSeriesFromId = async (id) => {
 };
 
 
-
-
-
 const getGenreFromApi = async (filter) => {
     const res = axios.get(baseUrl + 'genre/movie/list/' + filter , { params: { api_key: apiKey } });
 	return res;
@@ -49,9 +44,6 @@ const getMoviesFromKeyword = async (id) => {
     const res = axios.get(baseUrl + 'keyword/' + id , { params: { api_key: apiKey } });
 	return res;
 };
-
-
-
 
 
 const getMoviesFromTrending = async () => {

@@ -3,7 +3,6 @@ import MovieCard from '../components/layout/MovieCard';
 import { getMovieListFromApi } from '../components/api/API';
 import React, {useState} from 'react';
 import styles from './HomePage.module.scss';
-// import styles from '../components/layout/MovieCard.module.scss';
 import { MovieList } from '../components/detail';
 import TrendingMovieList from '../components/detail/TrendingMovieList';
 import UpcomingMovieList from '../components/detail/UpcomingMovieList';

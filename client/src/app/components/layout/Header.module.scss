@@ -10,10 +10,10 @@
         margin: 0 auto;
         width: 70%;
 
-
         .user{
             display: flex;
-            justify-content: center;
+            // justify-content: center;
+            align-items: center;
 
             .logOut{
                 background-color: transparent;
@@ -21,7 +21,6 @@
                 border: none;
                 cursor: pointer;
                 font-family: Georgia, "Times New Roman", Times, serif;
-
             
                 .user__avatar {
                     width: 1.3rem;
@@ -34,9 +33,20 @@
                     color: grey;
                     border-bottom: 1px solid grey;
                 }
-
             }
-        
+
+            a {
+                color: red;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 3px;
+            }
+
+            a:hover {
+                color: grey;
+                border-bottom: 1px solid grey;
+                padding-bottom: 3px;
+            }
         }
 
         ul{
@@ -61,7 +71,6 @@
                     border-bottom: 1px solid grey;
                     padding-bottom: 3px;
                 }
-
             }
         }
     }

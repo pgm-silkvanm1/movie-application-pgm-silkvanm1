@@ -3,7 +3,6 @@ import MovieCard from '../components/layout/MovieCard';
 import { getMultiFromApi } from '../components/api/API';
 import React, {useState} from 'react';
 import styles from './HomePage.module.scss';
-// import styles from '../components/layout/MovieCard.module.scss';
 import MovieList from '../components/detail/MovieList';
 import TrendingMovieList from '../components/detail/TrendingMovieList';
 import Trailer from '../components/detail/Trailer';
@@ -21,7 +20,6 @@ const HomePage = () => {
       const res = await getMultiFromApi(query);
       const data  = await res;
       setMovies(data.data.results);
-      // console.log(data)
     }catch(err){
       console.error(err);
     }

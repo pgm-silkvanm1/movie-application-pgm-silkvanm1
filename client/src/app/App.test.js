@@ -4,7 +4,7 @@ import App from './App';
 
 test('renders app', () => {
   render(<App />);
-  expect(screen).toBeDefined()
+  expect(screen).toBeDefined();
   expect(screen.getByText('Home')).toBeDefined();
   expect(screen.getAllByText('Movies')).toHaveLength(2);
 });

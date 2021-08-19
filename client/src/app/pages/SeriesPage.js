@@ -21,7 +21,7 @@ const SeriesPage = () => {
       const res = await getSeriesFromApi(query);
       const data  = await res;
       setSeries(data.data.results);
-      // console.log(data)
+    //   console.log(data)
     }catch(err){
       console.error(err);
     }

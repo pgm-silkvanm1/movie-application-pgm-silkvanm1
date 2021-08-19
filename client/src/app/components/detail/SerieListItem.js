@@ -17,9 +17,6 @@ const SerieListItem = ({ serie }) => {
       </Link>
 
         <h3 className={styles.title}><Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>{ serie.name }</Link>
-        <span className={styles.numViews}>
-          <span>{ serie.numViews }</span>
-        </span>
         </h3>
         {isShown && (
         <div className={styles.overview}>

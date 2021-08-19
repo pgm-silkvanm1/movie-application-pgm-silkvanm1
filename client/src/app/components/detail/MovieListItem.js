@@ -8,7 +8,8 @@ const MovieListItem = ({ movie }) => {
     const [isShown, setIsShown] = useState(false);
 
   return (
-    <article className={styles.movielistItem} >
+    <article className={styles.movielistItem} onMouseEnter={() => setIsShown(true)}
+    onMouseLeave={() => setIsShown(false)}>
       <Link to={Routes.MOVIE_DETAILS.replace(':id', movie.id)}>
       <img className={styles.poster}
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}

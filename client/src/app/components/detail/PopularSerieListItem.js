@@ -11,7 +11,7 @@ const PopularSerieListItem = ({ serie }) => {
             alt={serie.title + ' poster'}/>
         </Link>
         <div className={styles.text}>
-            <h3 className={styles.title}><Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>{ serie.title }</Link> <span className={styles.numViews}><span>{ serie.numViews }</span></span>
+            <h3 className={styles.title}><Link to={Routes.SERIE_DETAILS.replace(':id', serie.id)}>{ serie.title }</Link>
             </h3>
             {/* <img src='https://image.flaticon.com/icons/png/512/1828/1828884.png'/> */}
             <p>
