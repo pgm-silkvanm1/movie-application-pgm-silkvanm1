@@ -2,28 +2,55 @@
     background: linear-gradient(360deg,#224e4d 10%,#083023 360%);
     background-repeat: no-repeat;
     background-position: center;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0 auto;
+        width: 75%;
+
+        ul{
+            display: flex;
+            list-style-type: none;
+
+            li {
+                margin: 0 0.25rem;
+                padding: 1rem;
+
+                a {
+                    font-size: 1.5rem;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: grey;
+                    border-bottom: 1px solid grey;
+                    padding-bottom: 3px;
+                }
+
+                .logOut{
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                
+                    .user__avatar {
+                        width: 1.3rem;
+                        height: 1.3rem;
+                        padding-right: 1rem;
+                        color: white;
+                    }
+                }
+
+                .logOut:hover{
+                    color: grey;
+                    border-bottom: 1px solid grey;
+                }
+            }
+        }
+    }
 }
 
-.header nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-}
-
-.header nav ul li {
-    margin: 0 0.25rem;
-    padding: 1rem;
-}
-
-.header nav ul li a {
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
-}
-
-.header nav ul li a:hover {
-    color: grey;
-    border-bottom: 1px solid grey;
-    padding-bottom: 3px;
-}
 

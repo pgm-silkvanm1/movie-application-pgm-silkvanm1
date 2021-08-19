@@ -2,7 +2,8 @@ import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard';
 import { getMovieListFromApi } from '../components/api/API';
 import React, {useState} from 'react';
-import styles from '../components/layout/MovieCard.module.scss';
+import styles from './HomePage.module.scss';
+// import styles from '../components/layout/MovieCard.module.scss';
 import { MovieList } from '../components/detail';
 import TrendingMovieList from '../components/detail/TrendingMovieList';
 import UpcomingMovieList from '../components/detail/UpcomingMovieList';
@@ -28,8 +29,8 @@ const FilmsPage = () => {
 	return (
 		<BaseLayout>
             <form className={styles.form} onSubmit={searchMovies}>
-                <label className="label" htmlFor="query"></label>
-                <input className="input" type="text" name="query"
+                <label className={styles.label} htmlFor="query"></label>
+                <input className={styles.input} type="text" name="query"
                     placeholder="i.e. Jurassic Park"
                     value={query} onChange={(e) => setQuery(e.target.value)}
                 />

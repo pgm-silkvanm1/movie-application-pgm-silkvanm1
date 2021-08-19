@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeContext } from '../../utilities/theme';
 import { useContext } from 'react';
+import styles from './Header.module.scss';
 
 const ThemeToggler = () => {
 
@@ -13,7 +14,7 @@ const ThemeToggler = () => {
     };
 
     return(
-        <button onClick={themeHandler}>
+        <button className={styles.theme} onClick={themeHandler}>
             <span role="img" aria-label="switch theme">
                 🌞
             </span>

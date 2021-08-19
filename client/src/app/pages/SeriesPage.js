@@ -2,7 +2,8 @@ import { BaseLayout } from '../layouts';
 import SerieCard from '../components/layout/SerieCard';
 import { getSeriesFromApi } from '../components/api/API';
 import React, {useState} from 'react';
-import styles from '../components/layout/MovieCard.module.scss';
+import styles from './HomePage.module.scss';
+// import styles from '../components/layout/MovieCard.module.scss';
 import SerieList from '../components/detail/SerieList';
 import LatestSerieList from '../components/detail/LatestSerieList';
 import RatedSerieList from '../components/detail/RatedSerieList';
@@ -29,8 +30,8 @@ const SeriesPage = () => {
   return (
     <BaseLayout>
       <form className={styles.form} onSubmit={searchSeries}>
-        <label className="label" htmlFor="query"></label>
-        <input className="input" type="text" name="query"
+        <label className={styles.label} htmlFor="query"></label>
+        <input className={styles.input} type="text" name="query"
           placeholder="i.e. Loki"
           value={query} onChange={(e) => setQuery(e.target.value)}
         />

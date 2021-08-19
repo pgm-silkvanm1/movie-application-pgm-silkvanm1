@@ -1,0 +1,50 @@
+.form {
+    margin: 0 auto;
+    text-align: center;
+    width: 20rem;
+    display: flex;
+
+    .input {
+
+        border: 1px solid #ddd;
+        padding: 0.3rem;
+        width: 20rem;
+
+    }
+
+    .gradientbtn1 {
+        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+
+        border: white;
+        width: 3rem;
+        cursor: pointer;
+        background-image: url('https://image.flaticon.com/icons/png/512/709/709592.png');
+        background-position: center;
+        background-size: 1rem;
+        background-repeat: no-repeat;
+    
+    }
+
+    .gradientbtn1:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+}
+  
+
+
+.title {
+    font-size: 4.4rem;
+    text-align: center
+}
+  
+// @media (min-width:49rem){
+//     .form {
+//       grid-template-columns: auto 1fr auto;
+//       grid-gap: 1rem;
+//       align-items: center;
+//     }
+  
+//     .input {
+//       margin-bottom: 0;
+//     }
+// }

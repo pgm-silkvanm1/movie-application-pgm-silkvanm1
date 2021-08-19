@@ -2,7 +2,8 @@ import { BaseLayout } from '../layouts';
 import MovieCard from '../components/layout/MovieCard';
 import { getMultiFromApi } from '../components/api/API';
 import React, {useState} from 'react';
-import styles from '../components/layout/MovieCard.module.scss';
+import styles from './HomePage.module.scss';
+// import styles from '../components/layout/MovieCard.module.scss';
 import MovieList from '../components/detail/MovieList';
 import TrendingMovieList from '../components/detail/TrendingMovieList';
 import Trailer from '../components/detail/Trailer';
@@ -28,23 +29,25 @@ const HomePage = () => {
       
   return (
     <BaseLayout>
-      <form className={styles.form} onSubmit={searchMovies}>
-        <label className="label" htmlFor="query"></label>
-        <input className="input" type="text" name="query"
-          placeholder="i.e. Jurassic Park"
-          value={query} onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className={styles.gradientbtn1} type="submit">Search</button>
-      </form>
-      <div className={styles.cardlist}>
-          {movies && movies.map(movie => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-      </div>
-      <h1 className={styles.title}>Movie DataBase</h1>
-      <TrendingMovieList/>
-      <MovieList/>
-      <Trailer/>
+        <form className={styles.form} onSubmit={searchMovies}>
+            <label className={styles.label} htmlFor="query"></label>
+            <input className={styles.input} type="text" name="query"
+            placeholder="i.e. Jurassic Park"
+            value={query} onChange={(e) => setQuery(e.target.value)}
+            />
+            {/* <div className={styles.search}> */}
+                <button className={styles.gradientbtn1} type="submit" placeholder=""></button>
+            {/* </div> */}
+        </form>
+        <div className={styles.cardlist}>
+            {movies && movies.map(movie => (
+                <MovieCard movie={movie} key={movie.id} />
+            ))}
+        </div>
+        <h1 className={styles.title}>Movie DataBase</h1>
+        <TrendingMovieList/>
+        <MovieList/>
+        <Trailer/>
     </BaseLayout>
   );
 };
